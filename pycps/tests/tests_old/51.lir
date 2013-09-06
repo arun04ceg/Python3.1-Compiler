@@ -1,0 +1,190 @@
+(program
+ (define break (void))
+ (define return (void))
+ (define continue (void))
+ (define $current-handler (void))
+ (define g$x (void))
+ (begin
+   (set! g$x (py-list* (py-list* (py-list* 5))))
+   ((lambda (b21)
+      (begin
+        ((lambda (i20)
+           (begin
+             ((lambda (v22)
+                (begin
+                  (if (tuple? b21)
+                    (tuple-set!
+                     b21
+                     i20
+                     (+
+                      v22
+                      (*
+                       100
+                       ((lambda (e30)
+                          (begin
+                            ((lambda (i29)
+                               (begin
+                                 (if (py-list? e30)
+                                   (py-list-ref e30 i29)
+                                   (if (tuple? e30)
+                                     (tuple-ref e30 i29)
+                                     (if (dict? e30)
+                                       (dict-ref e30 i29)
+                                       (error "cannot index object"))))))
+                             0)))
+                        ((lambda (e28)
+                           (begin
+                             ((lambda (i27)
+                                (begin
+                                  (if (py-list? e28)
+                                    (py-list-ref e28 i27)
+                                    (if (tuple? e28)
+                                      (tuple-ref e28 i27)
+                                      (if (dict? e28)
+                                        (dict-ref e28 i27)
+                                        (error "cannot index object"))))))
+                              0)))
+                         ((lambda (e26)
+                            (begin
+                              ((lambda (i25)
+                                 (begin
+                                   (if (py-list? e26)
+                                     (py-list-ref e26 i25)
+                                     (if (tuple? e26)
+                                       (tuple-ref e26 i25)
+                                       (if (dict? e26)
+                                         (dict-ref e26 i25)
+                                         (error "cannot index object"))))))
+                               0)))
+                          g$x))))))
+                    (if (py-list? b21)
+                      (py-list-set!
+                       b21
+                       i20
+                       (+
+                        v22
+                        (*
+                         100
+                         ((lambda (e36)
+                            (begin
+                              ((lambda (i35)
+                                 (begin
+                                   (if (py-list? e36)
+                                     (py-list-ref e36 i35)
+                                     (if (tuple? e36)
+                                       (tuple-ref e36 i35)
+                                       (if (dict? e36)
+                                         (dict-ref e36 i35)
+                                         (error "cannot index object"))))))
+                               0)))
+                          ((lambda (e34)
+                             (begin
+                               ((lambda (i33)
+                                  (begin
+                                    (if (py-list? e34)
+                                      (py-list-ref e34 i33)
+                                      (if (tuple? e34)
+                                        (tuple-ref e34 i33)
+                                        (if (dict? e34)
+                                          (dict-ref e34 i33)
+                                          (error "cannot index object"))))))
+                                0)))
+                           ((lambda (e32)
+                              (begin
+                                ((lambda (i31)
+                                   (begin
+                                     (if (py-list? e32)
+                                       (py-list-ref e32 i31)
+                                       (if (tuple? e32)
+                                         (tuple-ref e32 i31)
+                                         (if (dict? e32)
+                                           (dict-ref e32 i31)
+                                           (error "cannot index object"))))))
+                                 0)))
+                            g$x))))))
+                      (if (dict? b21)
+                        (dict-set!
+                         b21
+                         i20
+                         (+
+                          v22
+                          (*
+                           100
+                           ((lambda (e42)
+                              (begin
+                                ((lambda (i41)
+                                   (begin
+                                     (if (py-list? e42)
+                                       (py-list-ref e42 i41)
+                                       (if (tuple? e42)
+                                         (tuple-ref e42 i41)
+                                         (if (dict? e42)
+                                           (dict-ref e42 i41)
+                                           (error "cannot index object"))))))
+                                 0)))
+                            ((lambda (e40)
+                               (begin
+                                 ((lambda (i39)
+                                    (begin
+                                      (if (py-list? e40)
+                                        (py-list-ref e40 i39)
+                                        (if (tuple? e40)
+                                          (tuple-ref e40 i39)
+                                          (if (dict? e40)
+                                            (dict-ref e40 i39)
+                                            (error "cannot index object"))))))
+                                  0)))
+                             ((lambda (e38)
+                                (begin
+                                  ((lambda (i37)
+                                     (begin
+                                       (if (py-list? e38)
+                                         (py-list-ref e38 i37)
+                                         (if (tuple? e38)
+                                           (tuple-ref e38 i37)
+                                           (if (dict? e38)
+                                             (dict-ref e38 i37)
+                                             (error "cannot index object"))))))
+                                   0)))
+                              g$x))))))
+                        (void))))))
+              ((lambda (e24)
+                 (begin
+                   ((lambda (i23)
+                      (begin
+                        (if (py-list? e24)
+                          (py-list-ref e24 i23)
+                          (if (tuple? e24)
+                            (tuple-ref e24 i23)
+                            (if (dict? e24)
+                              (dict-ref e24 i23)
+                              (error "cannot index object"))))))
+                    i20)))
+               b21))))
+         0)))
+    ((lambda (e19)
+       (begin
+         ((lambda (i18)
+            (begin
+              (if (py-list? e19)
+                (py-list-ref e19 i18)
+                (if (tuple? e19)
+                  (tuple-ref e19 i18)
+                  (if (dict? e19)
+                    (dict-ref e19 i18)
+                    (error "cannot index object"))))))
+          0)))
+     ((lambda (e17)
+        (begin
+          ((lambda (i16)
+             (begin
+               (if (py-list? e17)
+                 (py-list-ref e17 i16)
+                 (if (tuple? e17)
+                   (tuple-ref e17 i16)
+                   (if (dict? e17)
+                     (dict-ref e17 i16)
+                     (error "cannot index object"))))))
+           0)))
+      g$x)))
+   (py-print g$x)))

@@ -1,0 +1,10 @@
+(program
+ (define f (void))
+ (define y (void))
+ (set-global! y 10)
+ (set-global!
+  f
+  (lambda (x) (call/ec (lambda (return) (let () (void) (set-global! y 30))))))
+ (py-print (get-global y))
+ ((get-global f) 30)
+ (py-print (get-global y)))

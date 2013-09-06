@@ -1,0 +1,28 @@
+(program
+ (define b (void))
+ (define c (void))
+ (define a (void))
+ (define z (void))
+ (define e (void))
+ (define q (void))
+ (set-global! a 3)
+ (set-global!
+  b
+  (lambda (c) (call/ec (lambda (return) (let () (return (+ c 3)))))))
+ (set-global!
+  c
+  (lambda (d) (call/ec (lambda (return) (return (+ d (get-global a)))))))
+ (set-global! e (lambda (a b c) (call/ec (lambda (return) (return (c a b))))))
+ (set-global!
+  q
+  (lambda (b c) (call/ec (lambda (return) (let () (return (b c)))))))
+ (set-global!
+  z
+  (lambda (c)
+    (call/ec
+     (lambda (return) (return ((get-global b) (+ (get-global a) c)))))))
+ (py-print
+  ((get-global e)
+   (get-global z)
+   ((get-global c) ((get-global b) 3))
+   (get-global q))))

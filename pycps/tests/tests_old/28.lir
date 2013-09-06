@@ -1,0 +1,20 @@
+(program
+ (define break (void))
+ (define return (void))
+ (define continue (void))
+ (define $current-handler (void))
+ (define g$a (void))
+ (begin
+   (set! g$a (dict (1 2)))
+   ((lambda (b17)
+      (begin
+        ((lambda (i16)
+           (begin
+             (if (tuple? b17)
+               (tuple-set! b17 i16 3)
+               (if (py-list? b17)
+                 (py-list-set! b17 i16 3)
+                 (if (dict? b17) (dict-set! b17 i16 3) (void))))))
+         1)))
+    g$a)
+   (py-print g$a)))

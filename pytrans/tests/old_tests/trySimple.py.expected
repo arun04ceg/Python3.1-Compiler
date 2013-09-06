@@ -1,0 +1,4 @@
+(program
+ (try
+  (let () (py-print "try block"))
+  (lambda (ex) (let () (py-print "exception")))))

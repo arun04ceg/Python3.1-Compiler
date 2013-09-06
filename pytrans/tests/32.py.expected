@@ -1,0 +1,6 @@
+(program
+ (define x (void))
+ (set-global! x #t)
+ (cond
+  ((not (get-global x)) (let () (py-print (not (get-global x)))))
+  (else (let () (py-print 20)))))

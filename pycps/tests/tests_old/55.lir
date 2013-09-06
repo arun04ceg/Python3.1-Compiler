@@ -1,0 +1,12 @@
+(program
+ (define break (void))
+ (define return (void))
+ (define continue (void))
+ (define $current-handler (void))
+ (define g$b (void))
+ (begin
+   (set! g$b
+     (lambda ()
+       (call/ec
+        (lambda (return) ((lambda () (begin (py-print "Passing") (void))))))))
+   (g$b)))

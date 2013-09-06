@@ -1,0 +1,23 @@
+(program
+ (define break (void))
+ (define return (void))
+ (define continue (void))
+ (define $current-handler (void))
+ (define g$b (void))
+ (define g$c (void))
+ (define g$a (void))
+ (define g$z (void))
+ (define g$e (void))
+ (define g$q (void))
+ (begin
+   (set! g$a 3)
+   (set! g$b
+     (lambda (c)
+       (call/ec (lambda (return) ((lambda () (begin (return (+ c 3)))))))))
+   (set! g$c (lambda (d) (call/ec (lambda (return) (return (+ d g$a))))))
+   (set! g$e (lambda (a b c) (call/ec (lambda (return) (return (c a b))))))
+   (set! g$q
+     (lambda (b c)
+       (call/ec (lambda (return) ((lambda () (begin (return (b c)))))))))
+   (set! g$z (lambda (c) (call/ec (lambda (return) (return (g$b (+ g$a c)))))))
+   (py-print (g$e g$z (g$c (g$b 3)) g$q))))

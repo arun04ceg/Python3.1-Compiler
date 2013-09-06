@@ -1,0 +1,4 @@
+(program
+ (cond (#t (py-print "bob")))
+ (cond (#f (py-print 5)))
+ (cond ((< 3 343151) (py-print "why?"))))

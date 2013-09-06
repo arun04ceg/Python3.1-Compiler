@@ -1,0 +1,1 @@
+(program (define x (void)) (set-global! x 10) (py-print (get-global x)))

@@ -1,0 +1,6 @@
+(program
+ (define y (void))
+ (define x (void))
+ (set-global! x 3)
+ (set-global! y 10)
+ (py-print (bitwise-xor (get-global x) (get-global y))))

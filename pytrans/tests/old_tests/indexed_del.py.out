@@ -1,0 +1,24 @@
+(program
+ (define f (void))
+ (define i (void))
+ (set-global!
+  f
+  (lambda (x)
+    (call/ec
+     (lambda (return)
+       (let () (py-print x) (return (dict ("foo" (py-list* 1 2 3)))))))))
+ (py-print ((get-global f) 3))
+ (set-global! i 1)
+ (let ((b19
+        (let ((e17 ((get-global f) 3)))
+          (let ((i16 "foo"))
+            (cond
+             ((py-list? e17) (py-list-ref e17 i16))
+             ((tuple? e17) (tuple-ref e17 i16))
+             ((dict? e17) (dict-ref e17 i16))
+             (else (error "cannot index object")))))))
+   (let ((i18 (get-global i)))
+     (cond
+      ((tuple? b19) (error "Cannot delete from tuples!"))
+      ((py-list? b19) (py-list-remove! b19 i18))
+      ((dict? b19) (dict-remove! b19 i18))))))

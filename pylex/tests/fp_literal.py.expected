@@ -1,0 +1,8 @@
+(LIT 3.14)
+(LIT 10.)
+(LIT .001)
+(LIT 1e100)
+(LIT 3.14e-10)
+(LIT 0e0)
+(NEWLINE)
+(ENDMARKER)

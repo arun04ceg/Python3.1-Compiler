@@ -1,0 +1,6 @@
+(program
+ (define f (void))
+ (set-global! f (lambda () (call/ec (lambda (return) (let () (throw 3))))))
+ (try
+  (let () ((get-global f)) (py-print "fail"))
+  (lambda (ex) (let () (py-print 20)))))

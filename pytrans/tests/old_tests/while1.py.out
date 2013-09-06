@@ -1,0 +1,6 @@
+(program
+ (define i (void))
+ (set-global! i 10)
+ (while
+  (> (get-global i) 0)
+  (let () (py-print (get-global i)) (set-global! i (- (get-global i) 1)))))

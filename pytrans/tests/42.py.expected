@@ -1,0 +1,1 @@
+(program (try (let () (py-print 10)) (lambda (ex) (let () (py-print 15)))))

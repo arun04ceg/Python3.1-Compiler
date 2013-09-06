@@ -1,0 +1,44 @@
+(program
+ (define break (void))
+ (define return (void))
+ (define continue (void))
+ (define $current-handler (void))
+ (define g$x (void))
+ (begin
+   (set! g$x (py-list* (py-list* (py-list* 5))))
+   ((lambda (b21)
+      (begin
+        ((lambda (i20)
+           (begin
+             (if (tuple? b21)
+               (tuple-set! b21 i20 100)
+               (if (py-list? b21)
+                 (py-list-set! b21 i20 100)
+                 (if (dict? b21) (dict-set! b21 i20 100) (void))))))
+         0)))
+    ((lambda (e19)
+       (begin
+         ((lambda (i18)
+            (begin
+              (if (py-list? e19)
+                (py-list-ref e19 i18)
+                (if (tuple? e19)
+                  (tuple-ref e19 i18)
+                  (if (dict? e19)
+                    (dict-ref e19 i18)
+                    (error "cannot index object"))))))
+          0)))
+     ((lambda (e17)
+        (begin
+          ((lambda (i16)
+             (begin
+               (if (py-list? e17)
+                 (py-list-ref e17 i16)
+                 (if (tuple? e17)
+                   (tuple-ref e17 i16)
+                   (if (dict? e17)
+                     (dict-ref e17 i16)
+                     (error "cannot index object"))))))
+           0)))
+      g$x)))
+   (py-print g$x)))

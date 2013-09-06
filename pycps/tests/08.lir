@@ -1,0 +1,15 @@
+(program
+ (define break (void))
+ (define return (void))
+ (define continue (void))
+ (define $current-handler (void))
+ (define g$a (void))
+ (define g$x (void))
+ (define g$y (void))
+ (begin
+   (set! g$a 10)
+   (set! g$x 42)
+   (set! g$y 30)
+   (py-print g$a)
+   (py-print g$x)
+   (py-print g$y)))

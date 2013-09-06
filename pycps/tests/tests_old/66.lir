@@ -1,0 +1,13 @@
+(program
+ (define break (void))
+ (define return (void))
+ (define continue (void))
+ (define $current-handler (void))
+ (define g$b (void))
+ (define g$a (void))
+ (begin
+   (set! g$a 1)
+   (set! g$b 2)
+   (if (not-equal? g$a g$b)
+     ((lambda () (begin (py-print "Not equal"))))
+     ((lambda () (begin (py-print "Equal")))))))

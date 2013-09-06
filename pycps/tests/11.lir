@@ -1,0 +1,70 @@
+(program
+ (define break (void))
+ (define return (void))
+ (define continue (void))
+ (define $current-handler (void))
+ (define g$fib (void))
+ (define g$cache (void))
+ (begin
+   (set! g$cache (dict (0 0) (1 1)))
+   (set! g$fib
+     (lambda (n)
+       (call/ec
+        (lambda (return)
+          ((lambda ()
+             (begin
+               (if (in? n g$cache)
+                 ((lambda ()
+                    (begin
+                      (return
+                       ((lambda (e17)
+                          (begin
+                            ((lambda (i16)
+                               (begin
+                                 (if (py-list? e17)
+                                   (py-list-ref e17 i16)
+                                   (if (tuple? e17)
+                                     (tuple-ref e17 i16)
+                                     (if (dict? e17)
+                                       (dict-ref e17 i16)
+                                       (error "cannot index object"))))))
+                             n)))
+                        g$cache)))))
+                 (void))
+               ((lambda (b19)
+                  (begin
+                    ((lambda (i18)
+                       (begin
+                         (if (tuple? b19)
+                           (tuple-set!
+                            b19
+                            i18
+                            (+ (g$fib (- n 1)) (g$fib (- n 2))))
+                           (if (py-list? b19)
+                             (py-list-set!
+                              b19
+                              i18
+                              (+ (g$fib (- n 1)) (g$fib (- n 2))))
+                             (if (dict? b19)
+                               (dict-set!
+                                b19
+                                i18
+                                (+ (g$fib (- n 1)) (g$fib (- n 2))))
+                               (void))))))
+                     n)))
+                g$cache)
+               (return
+                ((lambda (e21)
+                   (begin
+                     ((lambda (i20)
+                        (begin
+                          (if (py-list? e21)
+                            (py-list-ref e21 i20)
+                            (if (tuple? e21)
+                              (tuple-ref e21 i20)
+                              (if (dict? e21)
+                                (dict-ref e21 i20)
+                                (error "cannot index object"))))))
+                      n)))
+                 g$cache)))))))))
+   (py-print (g$fib 25))))

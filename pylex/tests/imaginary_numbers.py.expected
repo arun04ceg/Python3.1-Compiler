@@ -1,0 +1,8 @@
+(LIT +3.14i)
+(LIT +10.i)
+(LIT +10i)
+(LIT +.001i)
+(LIT +1e100i)
+(LIT +3.14e-10i)
+(NEWLINE)
+(ENDMARKER)

@@ -1,0 +1,8 @@
+(program
+ (define h (void))
+ (define g (void))
+ (define z (void))
+ (set-global! g (lambda (x) (lambda (y) (+ x y))))
+ (set-global! h ((get-global g) 20))
+ (set-global! z ((get-global h) 30))
+ (py-print (get-global z)))

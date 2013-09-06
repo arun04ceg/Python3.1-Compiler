@@ -1,0 +1,4 @@
+(program
+ (try
+  (let () (py-print "some code") (throw (get-global Exception)))
+  (lambda (ex) (let () (py-print "exception handling code")))))

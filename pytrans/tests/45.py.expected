@@ -1,0 +1,11 @@
+(program
+ (define x (void))
+ (define y (void))
+ (define z (void))
+ (set-global! x #f)
+ (set-global! y #f)
+ (set-global! z 3)
+ (cond
+  ((get-global x) (let () (py-print (get-global x))))
+  ((get-global y) (let () (py-print (get-global y))))
+  (else (let () (py-print (get-global z))))))

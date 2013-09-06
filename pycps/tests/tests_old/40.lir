@@ -1,0 +1,168 @@
+(program
+ (define break (void))
+ (define return (void))
+ (define continue (void))
+ (define $current-handler (void))
+ (define g$x (void))
+ (define g$y (void))
+ (define g$a (void))
+ (begin
+   (set! g$x (py-list* 1 5 1 43 2 6 2 95 10 0 5 4))
+   (set! g$y (py-list* "bob" "bar" "billy"))
+   (set! g$a
+     (lambda ()
+       (call/ec
+        (lambda (return)
+          ((lambda (i j)
+             (begin
+               (if (equal? 5 3)
+                 ((lambda () (begin (void))))
+                 (if (< 5 (modulo 99 50))
+                   ((lambda ()
+                      (begin
+                        (call/ec
+                         (lambda (break)
+                           ((lambda ($seq16 $loop17)
+                              (begin
+                                (begin
+                                  (if (set? $seq16)
+                                    (for-set $seq16 $loop17)
+                                    (if (tuple? $seq16)
+                                      (for-tuple $seq16 $loop17)
+                                      (if (py-list? $seq16)
+                                        (for-py-list $seq16 $loop17)
+                                        (if (dict? $seq16)
+                                          (for-dict $seq16 $loop17)
+                                          (void)))))
+                                  (void))))
+                            g$x
+                            (lambda (i16)
+                              (call/ec
+                               (lambda (continue)
+                                 (begin
+                                   (set! i i16)
+                                   ((lambda ()
+                                      (begin
+                                        (py-print i)
+                                        (if (equal? (modulo i 2) 0)
+                                          ((lambda ()
+                                             (begin
+                                               (py-print
+                                                ((lambda (e18)
+                                                   (begin
+                                                     ((lambda (i17)
+                                                        (begin
+                                                          (if (py-list? e18)
+                                                            (py-list-ref
+                                                             e18
+                                                             i17)
+                                                            (if (tuple? e18)
+                                                              (tuple-ref
+                                                               e18
+                                                               i17)
+                                                              (if (dict? e18)
+                                                                (dict-ref
+                                                                 e18
+                                                                 i17)
+                                                                (error
+                                                                 "cannot index object"))))))
+                                                      (modulo i 2))))
+                                                 g$y)))))
+                                          (void))))))))))))
+                        (set! i 0)
+                        (call/ec
+                         (lambda (break)
+                           ((lambda ($seq16 $loop17)
+                              (begin
+                                (begin
+                                  (if (set? $seq16)
+                                    (for-set $seq16 $loop17)
+                                    (if (tuple? $seq16)
+                                      (for-tuple $seq16 $loop17)
+                                      (if (py-list? $seq16)
+                                        (for-py-list $seq16 $loop17)
+                                        (if (dict? $seq16)
+                                          (for-dict $seq16 $loop17)
+                                          (void)))))
+                                  (void))))
+                            g$x
+                            (lambda (i19)
+                              (call/ec
+                               (lambda (continue)
+                                 (begin
+                                   (set! j i19)
+                                   ((lambda ()
+                                      (begin
+                                        (if (equal?
+                                             (modulo
+                                              ((lambda (e21)
+                                                 (begin
+                                                   ((lambda (i20)
+                                                      (begin
+                                                        (if (py-list? e21)
+                                                          (py-list-ref e21 i20)
+                                                          (if (tuple? e21)
+                                                            (tuple-ref e21 i20)
+                                                            (if (dict? e21)
+                                                              (dict-ref
+                                                               e21
+                                                               i20)
+                                                              (error
+                                                               "cannot index object"))))))
+                                                    i)))
+                                               g$x)
+                                              2)
+                                             0)
+                                          ((lambda ()
+                                             (begin
+                                               (py-print
+                                                ((lambda (e23)
+                                                   (begin
+                                                     ((lambda (i22)
+                                                        (begin
+                                                          (if (py-list? e23)
+                                                            (py-list-ref
+                                                             e23
+                                                             i22)
+                                                            (if (tuple? e23)
+                                                              (tuple-ref
+                                                               e23
+                                                               i22)
+                                                              (if (dict? e23)
+                                                                (dict-ref
+                                                                 e23
+                                                                 i22)
+                                                                (error
+                                                                 "cannot index object"))))))
+                                                      (modulo
+                                                       ((lambda (e25)
+                                                          (begin
+                                                            ((lambda (i24)
+                                                               (begin
+                                                                 (if (py-list?
+                                                                      e25)
+                                                                   (py-list-ref
+                                                                    e25
+                                                                    i24)
+                                                                   (if (tuple?
+                                                                        e25)
+                                                                     (tuple-ref
+                                                                      e25
+                                                                      i24)
+                                                                     (if (dict?
+                                                                          e25)
+                                                                       (dict-ref
+                                                                        e25
+                                                                        i24)
+                                                                       (error
+                                                                        "cannot index object"))))))
+                                                             i)))
+                                                        g$x)
+                                                       2))))
+                                                 g$y)))))
+                                          (void))
+                                        (set! i (+ i 1)))))))))))))))
+                   (void)))))
+           (void)
+           (void))))))
+   (g$a)))

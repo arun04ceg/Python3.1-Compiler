@@ -1,0 +1,22 @@
+(program
+ (define b (void))
+ (define a (void))
+ (let ((t16 (tuple 1 2)))
+   (set-global!
+    a
+    (let ((e18 t16))
+      (let ((i17 0))
+        (cond
+         ((py-list? e18) (py-list-ref e18 i17))
+         ((tuple? e18) (tuple-ref e18 i17))
+         ((dict? e18) (dict-ref e18 i17))
+         (else (error "cannot index object"))))))
+   (set-global!
+    b
+    (let ((e20 t16))
+      (let ((i19 1))
+        (cond
+         ((py-list? e20) (py-list-ref e20 i19))
+         ((tuple? e20) (tuple-ref e20 i19))
+         ((dict? e20) (dict-ref e20 i19))
+         (else (error "cannot index object"))))))))

@@ -1,0 +1,4 @@
+(program
+ (define x (void))
+ (set-global! x #f)
+ (py-print (if (get-global x) 10 20)))

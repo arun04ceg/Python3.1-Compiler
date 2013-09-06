@@ -1,0 +1,6 @@
+(program
+ (define b (void))
+ (define a (void))
+ (set-global! a 20)
+ (set-global! b 40)
+ (py-print (or (get-global a) (get-global b))))

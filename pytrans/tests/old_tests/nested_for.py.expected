@@ -1,0 +1,25 @@
+(program
+ (define x (void))
+ (define y (void))
+ (define z (void))
+ (for-each
+  i16
+  (py-list* 1)
+  (begin
+    (set-global! x i16)
+    (let ()
+      (for-each
+       i17
+       (py-list* 2)
+       (begin
+         (set-global! y i17)
+         (let ()
+           (for-each
+            i18
+            (py-list* 3)
+            (begin
+              (set-global! z i18)
+              (let ()
+                (py-print (get-global x))
+                (py-print (get-global y))
+                (py-print (get-global z))))))))))))

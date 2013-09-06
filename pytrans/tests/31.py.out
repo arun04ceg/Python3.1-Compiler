@@ -1,0 +1,6 @@
+(program
+ (define y (void))
+ (define x (void))
+ (set-global! x 10)
+ (set-global! y 30)
+ (py-print (if (< (get-global x) (get-global y)) 1 20)))

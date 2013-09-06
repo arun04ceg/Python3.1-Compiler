@@ -1,0 +1,13 @@
+(program
+ (define break (void))
+ (define return (void))
+ (define continue (void))
+ (define $current-handler (void))
+ (define g$x (void))
+ (define g$y (void))
+ (define g$z (void))
+ (begin
+   (set! g$x 10)
+   (set! g$y 20)
+   (set! g$z 30)
+   (py-print (bitwise-or g$x g$y g$z))))

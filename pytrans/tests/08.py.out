@@ -1,0 +1,10 @@
+(program
+ (define a (void))
+ (define y (void))
+ (define x (void))
+ (set-global! a 10)
+ (set-global! x 42)
+ (set-global! y 30)
+ (py-print (get-global a))
+ (py-print (get-global x))
+ (py-print (get-global y)))

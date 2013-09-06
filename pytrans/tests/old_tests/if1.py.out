@@ -1,0 +1,6 @@
+(program
+ (define x (void))
+ (cond (#f (let () (void))) (else (let () (set-global! x 3))))
+ (py-print (get-global x))
+ (cond (#t (let () (void))) (else (let () (set-global! x 10))))
+ (py-print (get-global x)))

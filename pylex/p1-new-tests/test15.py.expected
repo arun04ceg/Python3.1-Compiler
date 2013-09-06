@@ -1,0 +1,3 @@
+(LIT "foo\n\n\n  bar")
+(NEWLINE)
+(ENDMARKER)

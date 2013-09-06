@@ -1,0 +1,80 @@
+(program
+ (define break (void))
+ (define return (void))
+ (define continue (void))
+ (define $current-handler (void))
+ (define g$x (void))
+ (define g$y (void))
+ (define g$z (void))
+ (begin
+   (call/ec
+    (lambda (break)
+      ((lambda ($seq16 $loop17)
+         (begin
+           (begin
+             (if (set? $seq16)
+               (for-set $seq16 $loop17)
+               (if (tuple? $seq16)
+                 (for-tuple $seq16 $loop17)
+                 (if (py-list? $seq16)
+                   (for-py-list $seq16 $loop17)
+                   (if (dict? $seq16) (for-dict $seq16 $loop17) (void)))))
+             (void))))
+       (py-list* 1)
+       (lambda (i16)
+         (call/ec
+          (lambda (continue)
+            (begin
+              (set! g$x i16)
+              ((lambda ()
+                 (begin
+                   (call/ec
+                    (lambda (break)
+                      ((lambda ($seq16 $loop17)
+                         (begin
+                           (begin
+                             (if (set? $seq16)
+                               (for-set $seq16 $loop17)
+                               (if (tuple? $seq16)
+                                 (for-tuple $seq16 $loop17)
+                                 (if (py-list? $seq16)
+                                   (for-py-list $seq16 $loop17)
+                                   (if (dict? $seq16)
+                                     (for-dict $seq16 $loop17)
+                                     (void)))))
+                             (void))))
+                       (py-list* 2)
+                       (lambda (i17)
+                         (call/ec
+                          (lambda (continue)
+                            (begin
+                              (set! g$y i17)
+                              ((lambda ()
+                                 (begin
+                                   (call/ec
+                                    (lambda (break)
+                                      ((lambda ($seq16 $loop17)
+                                         (begin
+                                           (begin
+                                             (if (set? $seq16)
+                                               (for-set $seq16 $loop17)
+                                               (if (tuple? $seq16)
+                                                 (for-tuple $seq16 $loop17)
+                                                 (if (py-list? $seq16)
+                                                   (for-py-list $seq16 $loop17)
+                                                   (if (dict? $seq16)
+                                                     (for-dict $seq16 $loop17)
+                                                     (void)))))
+                                             (void))))
+                                       (py-list* 3)
+                                       (lambda (i18)
+                                         (call/ec
+                                          (lambda (continue)
+                                            (begin
+                                              (set! g$z i18)
+                                              ((lambda ()
+                                                 (begin
+                                                   (py-print g$x)
+                                                   (py-print g$y)
+                                                   (py-print
+                                                    g$z)))))))))))))))))))))))))))))))))

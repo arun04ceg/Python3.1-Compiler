@@ -1,0 +1,5 @@
+(program
+ (define x (void))
+ (set-global! x #t)
+ (while (get-global x) (let () (set-global! x #f) (continue)))
+ (py-print 42))

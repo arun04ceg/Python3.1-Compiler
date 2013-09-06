@@ -1,0 +1,18 @@
+(program
+ (define b (void))
+ (define a (void))
+ (set-global! a (py-list* 1 2 3 4))
+ (set-global!
+  b
+  (lambda ()
+    (call/ec
+     (lambda (return)
+       (let ((j (void)) (i (void)))
+         (set! j 0)
+         (for-each
+          i16
+          (get-global a)
+          (begin (set! i i16) (let () (set! j (+ j i)))))
+         (py-print j))))))
+ ((get-global b))
+ (py-print (get-global a)))

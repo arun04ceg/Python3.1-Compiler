@@ -1,0 +1,5 @@
+(INDENT)
+(LIT "str")
+(NEWLINE)
+(DEDENT)
+(ENDMARKER)

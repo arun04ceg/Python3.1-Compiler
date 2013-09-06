@@ -1,0 +1,17 @@
+(program
+ (define x (void))
+ (set-global! x 0)
+ (cond
+  ((let ((cv16 1))
+     (if (< (get-global x) cv16)
+       (let ((cv17 2))
+         (if (< cv16 cv17)
+           (let ((cv18 3))
+             (if (< cv17 cv18)
+               (let ((cv19 4)) (if (< cv18 cv19) (< cv19 5) #f))
+               #f))
+           #f))
+       #f))
+   (let () (py-print "Good!")))
+  ((< (get-global x) 6) (let () (py-print "WTF?")))
+  (else (let () (py-print "Bad!")))))

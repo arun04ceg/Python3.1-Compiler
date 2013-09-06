@@ -1,0 +1,7 @@
+(KEYWORD as)
+(KEYWORD elif)
+(KEYWORD if)
+(KEYWORD or)
+(KEYWORD yield)
+(NEWLINE)
+(ENDMARKER)

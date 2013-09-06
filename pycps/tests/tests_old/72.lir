@@ -1,0 +1,16 @@
+(program
+ (define break (void))
+ (define return (void))
+ (define continue (void))
+ (define $current-handler (void))
+ (define g$a (void))
+ (define g$identity (void))
+ (begin
+   (set! g$identity
+     (lambda (x) (call/ec (lambda (return) ((lambda () (begin (return x))))))))
+   (set! g$a (dict (3 5)))
+   (py-print g$a)
+   (set! g$a (py-list* (g$identity (g$identity 4)) (g$identity 1) 3 5))
+   (py-print g$a)
+   (set! g$a (tuple (g$identity (g$identity 4)) (g$identity 1) 3 5))
+   (py-print g$a)))

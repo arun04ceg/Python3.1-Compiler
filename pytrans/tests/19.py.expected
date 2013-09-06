@@ -1,0 +1,9 @@
+(program
+ (py-print
+  (let ((e17 (dict ("x" 3) ("y" 4))))
+    (let ((i16 "x"))
+      (cond
+       ((py-list? e17) (py-list-ref e17 i16))
+       ((tuple? e17) (tuple-ref e17 i16))
+       ((dict? e17) (dict-ref e17 i16))
+       (else (error "cannot index object")))))))

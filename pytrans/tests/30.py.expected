@@ -1,0 +1,8 @@
+(program
+ (define x (void))
+ (define y (void))
+ (define z (void))
+ (set-global! x 10)
+ (set-global! y 20)
+ (set-global! z 30)
+ (py-print (bitwise-or (get-global x) (get-global y) (get-global z))))

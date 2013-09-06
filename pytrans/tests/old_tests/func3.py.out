@@ -1,0 +1,44 @@
+(program
+ (define b (void))
+ (define a (void))
+ (set-global! a 3)
+ (set-global!
+  b
+  (lambda ()
+    (call/ec
+     (lambda (return)
+       (let ((b (void)) (a (void)))
+         (set! a 2)
+         (set! b
+           (lambda ()
+             (call/ec
+              (lambda (return)
+                (let ((b (void)))
+                  (void)
+                  (set-global! a 4)
+                  (set! b
+                    (lambda ()
+                      (call/ec
+                       (lambda (return)
+                         (let ((b (void)))
+                           (void)
+                           (set-global! a 5)
+                           (set! b
+                             (lambda ()
+                               (call/ec
+                                (lambda (return)
+                                  (let ((a (void)))
+                                    (set! a 6)
+                                    (py-print a))))))
+                           (py-print (get-global a))
+                           (b)
+                           (py-print (get-global a)))))))
+                  (py-print (get-global a))
+                  (b)
+                  (py-print (get-global a)))))))
+         (py-print a)
+         (b)
+         (py-print a))))))
+ (py-print (get-global a))
+ ((get-global b))
+ (py-print (get-global a)))

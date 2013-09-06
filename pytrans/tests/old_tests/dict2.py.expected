@@ -1,0 +1,19 @@
+(program
+ (define i (void))
+ (define x (void))
+ (set-global! x (dict ("bob" "bill") ("sall" "sue")))
+ (for-each
+  i16
+  (get-global x)
+  (begin
+    (set-global! i i16)
+    (let ()
+      (py-print (get-global i))
+      (py-print
+       (let ((e18 (get-global x)))
+         (let ((i17 (get-global i)))
+           (cond
+            ((py-list? e18) (py-list-ref e18 i17))
+            ((tuple? e18) (tuple-ref e18 i17))
+            ((dict? e18) (dict-ref e18 i17))
+            (else (error "cannot index object"))))))))))

@@ -1,0 +1,1 @@
+print((lambda x,y:x)(20,30))

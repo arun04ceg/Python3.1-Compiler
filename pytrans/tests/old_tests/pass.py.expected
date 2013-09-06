@@ -1,0 +1,3 @@
+(program
+ (define b (void))
+ (set-global! b (lambda () (call/ec (lambda (return) (let () (void)))))))

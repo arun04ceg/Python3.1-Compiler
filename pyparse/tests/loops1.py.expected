@@ -1,0 +1,6 @@
+(program
+ (while True (pass))
+ (while True (suite (return 3)))
+ (while (comparison 1 ("==" 2)) (suite (return 4)) (suite (= (x) (if 5 3 2))))
+ (for i (indexed range (called 10)) (suite (return 3)) (suite (pass))))
+

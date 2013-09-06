@@ -1,0 +1,10 @@
+(program
+ (try
+  (let ()
+    (try
+     (let ()
+       (try
+        (let () (py-print "Begin...") (throw (get-global Exception)))
+        (lambda (ex) (let () (throw (get-global Exception))))))
+     (lambda (ex) (let () (throw (get-global Exception))))))
+  (lambda (ex) (let () (py-print "Good!")))))

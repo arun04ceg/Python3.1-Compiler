@@ -1,0 +1,11 @@
+(program
+ (define break (void))
+ (define return (void))
+ (define continue (void))
+ (define $current-handler (void))
+ (define g$x (void))
+ (begin
+   (set! g$x #t)
+   (if (not g$x)
+     ((lambda () (begin (py-print (not g$x)))))
+     ((lambda () (begin (py-print 20)))))))

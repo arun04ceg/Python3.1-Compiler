@@ -1,0 +1,10 @@
+(program
+ (define a (void))
+ (set-global! a (py-list* (- 1) 1 66.25 333 333 1234.5))
+ (let ((b17 (get-global a)))
+   (let ((i16 0))
+     (cond
+      ((tuple? b17) (error "Cannot delete from tuples!"))
+      ((py-list? b17) (py-list-remove! b17 i16))
+      ((dict? b17) (dict-remove! b17 i16)))))
+ (py-print (get-global a)))

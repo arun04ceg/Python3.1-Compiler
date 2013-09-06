@@ -1,0 +1,8 @@
+(program
+ (define i (void))
+ (define x (void))
+ (set-global! x (set 3 1 2 5))
+ (for-each
+  i16
+  (get-global x)
+  (begin (set-global! i i16) (let () (py-print (get-global i))))))
